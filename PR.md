@@ -2,7 +2,7 @@ Configuração Inicial:
 
 Após examinar o arquivo JSON fornecido, fiz ajustes para garantir a compatibilidade com o MongoDB. Em particular, alterei o parâmetro "Id" para "_id" para evitar a criação de um novo identificador pelo MongoDB. Também modifiquei as strings para listas correspondentes.
 
-Para importar o arquivo JSON para o MongoDB, comecei copiando o arquivo para a pasta tmp do contêiner do MongoDB usando o comando:
+Para importar o arquivo JSON para o MongoDB, comecei copiando o arquivo para a pasta tmp do container do MongoDB usando o comando:
 
 ```
 docker cp livros.json mongoEW:/tmp
