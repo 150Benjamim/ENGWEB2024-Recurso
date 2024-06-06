@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div.w3-container
+    h1.w3-margin Lista de Livros
+    table.w3-table.w3-bordered
+      thead
+        tr
+          th.w3-light-grey ID
+          th.w3-light-grey Título
+          th.w3-light-grey Autor
+          th.w3-light-grey Data de Publicação
+          th.w3-light-grey Páginas
+      tbody
+        each book in books
+          tr
+            td
+              a(href=`/${book._id}`, class='w3-text-blue') #{book._id}
+            td #{book.title}
+            td
+              each author in book.author
+                a(href=`/author/${author}`, class='w3-text-blue') #{author};
+              br
+            td #{book.publishDate}
+            td #{book.pages}

@@ -1,0 +1,94 @@
+extends layout
+
+block content
+  div.w3-container
+    h1.w3-margin.w3-text-teal #{livro.title}
+    if livro.coverImg
+      img(src=livro.coverImg, alt=livro.title, class='w3-image w3-round-large', style='max-width: 300px')
+    table.w3-table.w3-bordered
+      tbody
+        tr
+          td.bold Título
+          td #{livro.title}
+        tr
+          td.bold Série
+          td #{livro.series}
+        tr
+          td.bold Autores
+          td
+            each author in livro.author
+              a(href=`/author/${author}`) #{author}
+              br
+        tr
+          td.bold Rating
+          td #{livro.rating}
+        tr
+          td.bold Descrição
+          td #{livro.description}
+        tr
+          td.bold Idioma
+          td #{livro.language}
+        tr
+          td.bold ISBN
+          td #{livro.isbn}
+        tr
+          td.bold Gêneros
+          td
+            each genre in livro.genres
+              span #{genre}
+              br
+        tr
+          td.bold Personagens
+          td
+            each character in livro.characters
+              span #{character}
+              br
+        tr
+          td.bold Formato do Livro
+          td #{livro.bookFormat}
+        tr
+          td.bold Número de Páginas
+          td #{livro.pages}
+        tr
+          td.bold Editora
+          td #{livro.publisher}
+        tr
+          td.bold Data de Publicação
+          td #{livro.publishDate}
+        tr
+          td.bold Primeira Data de Publicação
+          td #{livro.firstPublishDate}
+        tr
+          td.bold Prêmios
+          td
+            each award in livro.awards
+              span #{award}
+              br
+        tr
+          td.bold Número de Avaliações
+          td #{livro.numRatings}
+        tr
+          td.bold Avaliações por Estrela
+          td
+            each rating, index in livro.ratingsByStars
+              span #{index + 1} Estrela: #{rating}
+              br
+        tr
+          td.bold Porcentagem de Curtidas
+          td #{livro.likedPercent}%
+        tr
+          td.bold Configuração
+          td
+            each setting in livro.setting
+              span #{setting}
+              br
+        tr
+          td.bold BBE Score
+          td #{livro.bbeScore}
+        tr
+          td.bold BBE Votes
+          td #{livro.bbeVotes}
+        tr
+          td.bold Preço
+          td.bold #{livro.price} €
+    a(href='/', class='w3-button w3-blue') Voltar à Página Principal
